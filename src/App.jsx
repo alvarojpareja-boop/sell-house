@@ -89,7 +89,7 @@ function App() {
             <Card className="bg-white/95 backdrop-blur-sm shadow-2xl">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Get Your Cash Offer</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4" data-netlify="true" name="contact">
                   <div>
                     <Input
                       type="text"
@@ -361,7 +361,7 @@ function App() {
             <Card className="shadow-xl">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Cash Offer</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4" data-netlify="true" name="contact">
                   <div>
                     <Input
                       type="text"
