@@ -7,10 +7,14 @@ import { Phone, Mail, MapPin, Clock, Shield, DollarSign, Home, CheckCircle, Star
 import './App.css'
 import heroBackground from './assets/hero-bg.jpg'
 import logo from './assets/logo.png'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
 
-function App() {
+function AppContent() {
   const [formData, setFormData] = useState({
-    name: '',
+    name: 
+'',
     email: '',
     phone: '',
     address: ''
@@ -141,7 +145,7 @@ function App() {
                     No obligation. We respect your privacy.
                   </p>
                   <p className="text-[0.6rem] text-gray-400 text-center leading-tight mt-2">
-                    By clicking “Get My Cash Offer”, you agree to receive calls and texts, including by autodialer, prerecorded messages, and artificial voice, and email from Sell My House Fast or one of its partners but not as a condition of any purchase, and you agree to the <a href="#" className="underline">Terms of Use</a> and <a href="#" className="underline">Privacy Policy</a>. Message frequency varies, also message and data rates may apply. Reply \'STOP\' to opt out and \'HELP\' for help.
+                    By clicking “Get My Cash Offer”, you agree to receive calls and texts, including by autodialer, prerecorded messages, and artificial voice, and email from Sell My House Fast or one of its partners but not as a condition of any purchase, and you agree to the <a href="/terms-and-conditions" className="underline">Terms of Use</a> and <a href="/privacy-policy" className="underline">Privacy Policy</a>. Message frequency varies, also message and data rates may apply. Reply \'STOP\' to opt out and \'HELP\' for help.
                   </p>
                 </form>
               </CardContent>
@@ -495,6 +499,17 @@ function App() {
     </div>
   )
 }
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<AppContent />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+      </Routes>
+    </Router>
+  );
+}
 
-export default App
+export default App;
 
